@@ -54,6 +54,14 @@
                                 row.appendChild(column)
 
                                           }
+                                          card.addEventListener('click', () =>{
+
+                                            window.location.assign(`./album.html?id=` + data.data[i].album.id + '&name=' + data.data[i].artist.name )
+                                  
+                                            //window.location.assign("./details.html?picId=" + photo.id)
+                                  
+                                            
+                                          })
 
                                           
                                      

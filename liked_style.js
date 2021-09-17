@@ -1,5 +1,61 @@
 /** @format */
 
+let displayTracks = document.querySelector("#artist-songs")
+let tracks = []
+
+window.onload = () => {
+	getSongs();
+}
+
+function getSongs() {
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+        .then((response) => response.json())
+        .then((data) => {
+        console.log({data})
+		tracks= data.tracks.data
+			showSongs(data)            
+            
+        })
+        .catch((err) => console.error(err))
+    }
+
+
+	function showSongs(album){
+		
+        album.tracks.data.forEach(track => {
+			console.log({track})
+            displayTracks.innerHTML += 
+            `<div class="table-body mt-3">
+			<div class="d-flex hash">
+				<h6 class="text-light">1</h6>
+			</div>
+			<div class="d-flex cover title">
+				<div class="cover-son">
+					<img src="${album.cover}" width="45" />
+				</div>
+				<div class="co">
+					<a id="a1" href="">${track.title}</a>
+					<br />
+					<a id="a2" href="">${album.artist.name}</a>
+					
+				</div>
+			</div>
+			<div class="d-flex album">
+				<span class="text-light album">${album.title}</span>
+			</div>
+			<div class="d-flex date-added">
+				<span class="text-light">${album.release_date}</span>
+			</div>
+			<div class="d-flex duration">
+				<span class="text-light">${track.duration}</span>
+			</div>
+		</div>`
+        }
+            
+            )
+    }
+
+
 document.querySelector('#btn-b4-follow').addEventListener('click', function () {
 	let doc = document.querySelector('.follow');
 	doc.classList.toggle('arrow-right');
@@ -105,3 +161,6 @@ function mute_sound() {
 	document.querySelector('.volume-hr').value = 0;
 	volnum.innerHTML = 0;
 }
+
+
+

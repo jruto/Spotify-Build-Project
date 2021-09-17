@@ -1,0 +1,267 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    min-height: 6vh;
+    /* width: 100%; */
+    margin: 0;
+}
+
+.header-icon {
+    width:  100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon {
+    /* position: absolute; */
+    margin-top: 24px;
+    height: 65px;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+
+
+.btn-primary1 {
+    background-color: #3a61b3;
+    color: white;
+    width: 100%;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    
+}
+
+.btn-primary1:hover {
+    background-color: #2d67e2;
+    color: white;
+}
+
+.btn-primary2 {
+    background-color: rgb(1, 5, 12);
+    color: white;
+    width: 100%;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+}
+
+.btn-primary2:hover {
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+.btn-primary3{
+    background-color: white;
+    width: 100%;
+    color: grey;
+    border-radius: 30px;
+    border: 2px solid grey;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+}
+
+.btn-primary3:hover {
+    background-color: #616467;
+    color: white;
+}
+
+.res {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.divider {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.form-check-input {
+    padding-left: 0px;
+    margin-left: 0px;
+    color: green;
+    background-color: #15883e;
+}
+
+.signup-btn {
+    width: 100%;
+    border-radius: 30px;
+    border: 2px solid;
+    height: 46px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: small;    
+}
+
+.signup-btn:hover {
+    background-color: #616467;
+    color: white;
+}
+
+.rem-label {
+    margin-left: 18px;
+}
+
+.log-in {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #15883e;
+    border-radius: 30px;
+    border-color: #148b3e;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+    
+}
+
+.log-in:hover {
+    background-color: #0daa44
+    
+}
+
+.checkbox-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.remember-me {
+    padding-top: 10px;
+    /* margin-top: 13px; */
+    margin-bottom: -5px;
+    padding-left: 0;
+    padding-right: 17px;
+    cursor: pointer;
+}
+
+.fb {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: -140px;
+    z-index: 1;
+}
+
+.apple {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: -120px;
+    z-index: 1;
+    font-weight: 100;
+    
+}
+
+.google {
+    position: absolute;
+    z-index: 1;
+    margin-top: 14px;
+    margin-left: -125px;
+    
+    
+   
+}
+
+.forgot-pass {
+    text-decoration: underline;
+    color: grey;
+    cursor: pointer;
+}
+
+.forgot-pass:hover {
+    color: #1ab651
+    
+}
+
+.dont-have-acc {
+    font-weight: 600;
+    /* letter-spacing: 1px; */
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.or {
+    /* content: "";
+    position: absolute; 
+    background-color: black;
+    height: 10px;
+    width: 5px;
+    margin-top: 200px; */
+    font-size: 12px;
+    color: black;
+    z-index: 3;
+   
+    
+}
+
+.or::before {
+    content: "OR";
+    position: absolute; 
+    background-color: white;
+    height: 15px;
+    width: 60px;
+    margin-top: -2px;
+    margin-left: -35px;
+    z-index: 1;
+}
+
+/* .or::after {
+    content: "";
+    position: absolute; 
+    background-color: white;
+    height: 15px;
+    width: 40px;
+    margin-top: -6px;
+    margin-left: -48px;
+    z-index: 1;
+    
+} */
+
+.pass-n-mail {
+    font-weight: bold;
+    line-height: 1;
+    color: black;
+}
+
+.input-text {
+    color: black;
+    font-weight: 400;
+}
+
+.pass-n-mail1 {
+    color: grey;
+    font-weight:400;
+    cursor: pointer;
+}
+
+.to-login {
+    font-size: medium;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.sq-borders {
+    border-radius: 0;
+}
+

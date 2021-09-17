@@ -14,49 +14,72 @@
                                         </div>
                                     </div>
                                 </div> */
-  loadImages = ()=>{
-    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen", {
-      
-    })
-    .then(response => response.json())
-    .then((data) => {
-        console.log(data)
+                                function search (query){
+                                    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query, {
+                                      
+                                    })
+                                      .then((responseBody) => responseBody.json())
+                                      .then((data) =>{
+                                          console.log(data.data[1])
+                                          let row =document.querySelectorAll('.pages.d-flex')[0]
+                                          let column = document.createElement('div')
+                                          column.classList.add("col-12","col-sm-6", "col-md-3","col-lg-4", "d-flex","flex-column", "mb-3")
 
-        const row = document.querySelector(".good-morning-card")
-            row.innerHTML = " "
 
-                    data.data.forEach(ele => {
-                        const col = document.createElement("div")
-                        col.classList.add("col-12", "col-md-4", "d-flex", "mb-3")
+                                          
 
-                        const img = document.createElement("img")
-                        img.src = ele.md5_image
-                        img.classList.add("img-fluid", "h-100", "w-100")
-                        img.style.objectFit = "cover"
+                                          for(let i=0;i<data.data.length;i++){
+                                            let card = document.createElement('div')
+                                            
+                                            console.log(card)
+                                            card.innerHTML=`
+                                            <div class="good-morning-card ml-3 mt-4 mb-3">
+                                  <div class="row no-gutters">
+                                      <div class="col-3">
+                                          <img src="${data.data[i].artist.picture}"
+                                              style="border-radius: 4px" width="80" />
+                                      </div>
+                                      <div class="col-5 ml-5">
+                                          <div class="card-body">
+                                              <h6 class="card-title text-white">
+                                                  ${data.data[i].title}
+                                              </h6>
+                                              <button id='btn-with-style' type="button" class="btn btn-success">▶️</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                                `
+                                column.appendChild(card)
+                                row.appendChild(column)
 
-                        // ######################
-                        // This is where we create the link with pagename + query string + dynamic photo id
-                        /* img.onclick = () => {
-                            window.location.assign("./details.html?picId=" + photo.id)
-                        }
+                                          }
 
-                        // changing the mouse cursor to the pointer like a link would have
-                        img.style.cursor = "pointer" */
-
-                        col.appendChild(img)
-                        row.appendChild(col)
+                                          
+                                     
+                                     
+                                      })
+                                  
+                                  
+                                  }
+                                  
+                                  
+                                  
+                                  
+                                  
+    
         
-            })
-        })
-            
-    
-    .catch(err => console.error(err))
-    
-        }
         window.onload = ()=>{
-            loadImages()
+            search("metallica")
 
         }
+
+
+
+
+       /*  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
+https://github.com/guillermoFragachan/Spotify2/blob/main/js/strivify.js
+ */
     
 
     

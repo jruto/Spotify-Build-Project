@@ -21,7 +21,7 @@
                                       .then((responseBody) => responseBody.json())
                                       .then((data) =>{
                                           console.log(data.data[1])
-                                          let row =document.querySelectorAll('.pages.d-flex')[0]
+                                          let row =document.getElementsByClassName('row-main')[0]
                                           let column = document.createElement('div')
                                           column.classList.add("col-12","col-sm-6", "col-md-3","col-lg-4", "d-flex","flex-column", "mb-3")
 

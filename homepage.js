@@ -1,18 +1,66 @@
 
+/* <div class="good-morning-card ml-3 mt-4 mb-3 active ">
+                                <div  class="row no-gutters">
+                                    <div class="col-3">
+                                        <img src="/assets/1.jpg"
+                                            style="border-radius: 4px" width="80" />
+                                    </div>
+                                    <div class="col-5 ml-5">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-white">
+                                                Burning Jazz-rock Fusion
+                                            </h6>
+                                            <button id='btn-with-style' type="button" onclick="playTrack()" class="btn btn-success">▶️</button>
+                                        </div>
+                                    </div>
+                                </div> */
+  loadImages = ()=>{
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "9284f03779msh0bce33a5a90af60p1e926fjsn8955d195eabe"
+        }
+    })
+    .then(response => response.json())
+    .then((data) => {
+        console.log(data)
 
-loadImages = ()=>{
-    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + query, {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key": "6dd0f092dfmshc7c788985801fa3p1b5331jsncbb8c36c49bb",
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        },
-      })
+        const row = document.querySelector(".good-morning-card")
+            row.innerHTML = " "
 
-      .then(response => response.json())
-      .then(data => console.log(data))
-}
+                    data.forEach(ele => {
+                        const col = document.createElement("div")
+                        col.classList.add("col-12", "col-md-4", "d-flex", "mb-3")
 
-window.onload = ()=>{
-    loadImages()
-}
+                        const img = document.createElement("img")
+                        img.src = data.md5_image
+                        img.classList.add("img-fluid", "h-100", "w-100")
+                        img.style.objectFit = "cover"
+
+                        // ######################
+                        // This is where we create the link with pagename + query string + dynamic photo id
+                        /* img.onclick = () => {
+                            window.location.assign("./details.html?picId=" + photo.id)
+                        }
+
+                        // changing the mouse cursor to the pointer like a link would have
+                        img.style.cursor = "pointer" */
+
+                        col.appendChild(img)
+                        row.appendChild(col)
+        
+            })
+        })
+            
+    
+    .catch(err => console.error(err))
+    
+        }
+        window.onload = ()=>{
+            loadImages()
+
+        }
+    
+
+    

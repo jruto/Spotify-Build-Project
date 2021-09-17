@@ -444,7 +444,23 @@
             sound1.onpause = function() {
             isPlaying = false;
             };
-        </script>
+
     </div>
+
+
+            // ----------HOMEWORK----------
+            // ---------- FETCHing THE API
+
+    window.onload = () => {
+                fetch("https://striveschool-api.herokuapp.com/api/deezer")
+                .then(response => response.json())
+                .then(body => {
+                    console.log(body)
+                })
+                .catch(err => console.log(err))
+            }
+
+
+        </script>
 </body>
 </html>

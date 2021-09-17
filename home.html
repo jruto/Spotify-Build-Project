@@ -921,16 +921,15 @@
                         <h4 class="mt-3 mb-3 ml-1">Recently played</h4>
 
                         <div class="d-flex justify-content-between">
-
-                            <div class="Recently-card ml-3 p-2 ">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2735218a8028e73b7fd7d785514"
-                                    class="card-img-top" />
-                                <div class="card-body mt-2">
-                                    <h6 class="card-title text-white">Card title</h6>
-                                    <h5 class="card-text">Some quick example text</h5>
-                                    <button id='btn-with-style1' type="button" class="btn btn-success">▶️</button>
+                                <div class="Recently-card ml-3 p-2 " onclick="openPage('Album2.html' )">
+                                    <img src="https://i.scdn.co/image/ab67616d0000b2735218a8028e73b7fd7d785514"
+                                        class="card-img-top" />
+                                    <div class="card-body mt-2">
+                                        <h6 class="card-title text-white">Card title</h6>
+                                        <h5 class="card-text">Some quick example text</h5>
+                                        <button id='btn-with-style1' type="button" class="btn btn-success">▶️</button>
+                                    </div>
                                 </div>
-                            </div>
 
                             <div class="Recently-card ml-3 p-2">
                                 <img src="/assets/13.jpg"
@@ -1373,6 +1372,10 @@
             function playTrack(){
                 let audio1 = document.getElementById('audio1');
                 audio.play()
+            }
+
+            function openPage (placeToGo) {
+                window.open(placeToGo)
             }
         </script>
 

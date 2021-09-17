@@ -16,11 +16,7 @@
                                 </div> */
   loadImages = ()=>{
     fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-            "x-rapidapi-key": "9284f03779msh0bce33a5a90af60p1e926fjsn8955d195eabe"
-        }
+      
     })
     .then(response => response.json())
     .then((data) => {
@@ -29,12 +25,12 @@
         const row = document.querySelector(".good-morning-card")
             row.innerHTML = " "
 
-                    data.forEach(ele => {
+                    data.data.forEach(ele => {
                         const col = document.createElement("div")
                         col.classList.add("col-12", "col-md-4", "d-flex", "mb-3")
 
                         const img = document.createElement("img")
-                        img.src = data.md5_image
+                        img.src = ele.md5_image
                         img.classList.add("img-fluid", "h-100", "w-100")
                         img.style.objectFit = "cover"
 

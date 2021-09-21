@@ -36,7 +36,7 @@
                                             <div class="good-morning-card ml-3 mt-4 mb-3">
                                   <div class="row no-gutters">
                                       <div class="col-3">
-                                          <img src="${data.data[i].artist.picture}"
+                                          <img src="${data.data[i].artist.picture}" onclick=card()
                                               style="border-radius: 4px" width="80" />
                                       </div>
                                       <div class="col-5 ml-5">
